@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView_scan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_pagesCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/pagesValue"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="10dp"
+                android:text="Sider: "/>
+
+            <Button
+                android:id="@+id/pagesValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="0"/>
+
+            <EditText
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="22dp"
+                android:hint="@string/hint_name"/>
+
+            <EditText
+                android:id="@+id/text_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/text_name"
+                android:layout_marginTop="12dp"
+                android:hint="@string/hint_author"/>
+
+            <EditText
+                android:id="@+id/text_periode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/text_author"
+                android:layout_marginTop="12dp"
+                android:hint="@string/hint_period"/>
+
+            <EditText
+                android:id="@+id/text_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/text_periode"
+                android:layout_marginTop="12dp"
+                android:hint="@string/hint_genre"/>
+<!--
+            <EditText
+                android:id="@+id/text_pages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/text_genre"
+                android:layout_marginTop="12dp"
+                android:hint="@string/pages"/>
+-->
+            <EditText
+                android:id="@+id/text_commentary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/text_genre"
+                android:layout_marginTop="12dp"
+                android:hint="@string/hint_commentary"
+                android:inputType="textMultiLine"/>
+
+            <Button
+                android:id="@+id/save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/text_commentary"
+                android:layout_marginTop="12dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/ScanStorageImg_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/CenterToken"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/ToDo" />
+
+    <TextView
+        android:id="@+id/CenterToken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/scrollView_scan"/>
+
+    <Button
+        android:id="@+id/ScanImg_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/CenterToken"
+        android:layout_alignParentBottom="true"
+        android:clickable="false"
+        android:enabled="false"
+        android:contentDescription="@string/ToDo" />
+
+</RelativeLayout>

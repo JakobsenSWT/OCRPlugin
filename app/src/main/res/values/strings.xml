@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">OCR-Plugin</string>
+
+    <!-- Generic messages -->
+    <string name="ToDo">TODO</string>
+    <string name="OK_text">OK</string>
+
+    <!-- Fragment_ScanImg EditText -->
+    <string name="hint_name">Navn</string>
+    <string name="hint_author">Forfatter</string>
+    <string name="hint_period">Periode</string>
+    <string name="hint_genre">Genre</string>
+    <string name="hint_pages">Normalsider</string>
+    <string name="hint_commentary">evt. kommentarer</string>
+
+    <!-- Fragment ScanImg Error messages -->
+    <string name="errorTitle">Ooops !</string>
+    <string name="errorNameMissing">You need to give your product a name</string>
+    <string name="errorTextRecognizer">Couldn\'t find any tekst on the image!</string>
+</resources>
