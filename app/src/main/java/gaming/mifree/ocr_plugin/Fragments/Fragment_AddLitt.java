@@ -93,8 +93,8 @@ public class Fragment_AddLitt extends Fragment implements View.OnClickListener {
 
     private void startLayout () {
 
-        ScanNewImg.setText("Camera");
-        ScanStorageImg.setText("Gallery");
+        ScanNewImg.setText(R.string.btn_camera);
+        ScanStorageImg.setText(R.string.btn_Storage);
 
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             if (MainActivity.getFromPref(getContext(), ALLOW_KEY)) {
@@ -170,7 +170,7 @@ public class Fragment_AddLitt extends Fragment implements View.OnClickListener {
 
                 if (takePictureIntent.resolveActivity(getContext().getPackageManager()) != null) {
 
-                    File photoFile = null;
+                    File photoFile;
                     try {
                         photoFile = createImageFile();
                     } catch (IOException ex) {
@@ -232,7 +232,7 @@ public class Fragment_AddLitt extends Fragment implements View.OnClickListener {
                         bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), uri);
                     }
 
-                    //Todo Returns a thumbnail which is not good enough for text recogniztion.
+                    //Todo might returns a thumbnail which is not good enough for text recogniztion?
                     if (requestCode == CAMERA_REQUEST) {
                         File imageFile = new File(currentPhotoPath);
                         if (imageFile.exists()) {
@@ -241,11 +241,11 @@ public class Fragment_AddLitt extends Fragment implements View.OnClickListener {
                         }
                     }
 
-                    frame = new Frame.Builder()
-                            .setBitmap(bitmap)
-                            .build();
+                    if (bitmap != null) {
+                        frame = new Frame.Builder()
+                                .setBitmap(bitmap)
+                                .build();
 
-                    if (frame != null) {
                         Log.d(TAG, "TextRecognizer initializing");
                         try {
                             new textRecognizer().execute();
@@ -253,6 +253,7 @@ public class Fragment_AddLitt extends Fragment implements View.OnClickListener {
                             Log.d(TAG, "TextRecognizer failed!");
                         }
                     }
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -284,7 +285,7 @@ public class Fragment_AddLitt extends Fragment implements View.OnClickListener {
 
     private void setScannedPages () {
         int i = (getCharacters() * Integer.parseInt(this.inputPages)) / 2400;
-        setPages.setText(""+i);
+        setPages.setText(String.valueOf(i));
     }
 
     private void closeFragment() {
@@ -331,7 +332,6 @@ public class Fragment_AddLitt extends Fragment implements View.OnClickListener {
                         TextBlock textBlock = textBlocks.get(textBlocks.keyAt(i));
 
                         setCharacters(textBlock.getValue().length());
-
                         Log.d(TAG, textBlock.getValue() + "| Characters: " + textBlock.getValue().length());
                     }
                 } else {

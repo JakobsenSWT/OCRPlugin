@@ -5,13 +5,16 @@
     <string name="ToDo">TODO</string>
     <string name="OK_text">OK</string>
 
-    <!-- Fragment_ScanImg EditText -->
+    <!-- Fragment_AddLitt EditText -->
     <string name="hint_name">Navn</string>
     <string name="hint_author">Forfatter</string>
     <string name="hint_period">Periode</string>
     <string name="hint_genre">Genre</string>
     <string name="hint_pages">Normalsider</string>
     <string name="hint_commentary">evt. kommentarer</string>
+    <!-- Fragment_AddLitt Buttons -->
+    <string name="btn_camera">Camera</string>
+    <string name="btn_Storage">Storage</string>
 
     <!-- Fragment ScanImg Error messages -->
     <string name="errorTitle">Ooops !</string>
