@@ -11,12 +11,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
+import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -64,20 +64,19 @@ public class Fragment_AddLitt extends Fragment implements View.OnClickListener {
     private Frame frame;
     private TextRecognizer mTextRecognizer;
 
-    private EditText setName, setAuthor, setPeriod, setGenre, setCommentary;
-    private Button setPages, save, ScanStorageImg, ScanNewImg;
+    private EditText setName, setAuthor, setPeriod, setGenre, setPages, setCommentary;
+    private Button save, ScanStorageImg, ScanNewImg;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_add_litt, container, false);
-
-        setPages = view.findViewById(R.id.pagesValue);
+        View view = inflater.inflate(R.layout.fragment_add_litt_2_0, container, false);
 
         setName = view.findViewById(R.id.text_name);
         setAuthor = view.findViewById(R.id.text_author);
-        setPeriod = view.findViewById(R.id.text_periode);
+        setPeriod = view.findViewById(R.id.text_period);
         setGenre = view.findViewById(R.id.text_genre);
+        setPages = view.findViewById(R.id.text_pages);
         setCommentary = view.findViewById(R.id.text_commentary);
 
         save = view.findViewById(R.id.save_button);
@@ -122,7 +121,6 @@ public class Fragment_AddLitt extends Fragment implements View.OnClickListener {
     }
 
     private void startOnClickListeners() {
-        setPages.setOnClickListener(this);
         save.setOnClickListener(this);
         ScanStorageImg.setOnClickListener(this);
         ScanNewImg.setOnClickListener(this);
