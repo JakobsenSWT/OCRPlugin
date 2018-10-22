@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/scrollView_scan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/text_input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:helperTextEnabled="true"
+                app:helperText="@string/helper_name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_name" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/text_input_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_input_name"
+                app:helperTextEnabled="true"
+                app:helperText="@string/helper_author">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_author"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/text_input_period"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_input_author"
+                app:helperTextEnabled="true"
+                app:helperText="@string/helper_period">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_period"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_period"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/text_input_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_input_period"
+                app:helperTextEnabled="true"
+                app:helperText="@string/helper_genre">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_genre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_genre"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/text_input_pages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_input_genre"
+                app:helperTextEnabled="true"
+                app:helperText="@string/helper_pages">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_pages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_pages"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/text_input_commentary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_input_pages"
+                app:helperTextEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/text_commentary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_commentary"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/CenterToken"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/ScanStorageImg_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/CenterToken"
+        android:layout_alignParentBottom="true"
+        android:contentDescription="@string/ToDo" />
+
+    <TextView
+        android:id="@+id/CenterToken"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/scrollView_scan"/>
+
+    <Button
+        android:id="@+id/ScanImg_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@id/CenterToken"
+        android:layout_alignParentBottom="true"
+        android:clickable="false"
+        android:enabled="false"
+        android:contentDescription="@string/ToDo" />
+
+</RelativeLayout>
